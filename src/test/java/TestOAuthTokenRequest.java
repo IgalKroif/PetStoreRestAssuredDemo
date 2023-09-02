@@ -60,5 +60,6 @@ public class TestOAuthTokenRequest {
 @Test
 public void test() {
     System.out.println(accessToken);
+
     }
 }

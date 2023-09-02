@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Data
 public class UserRequestPojo {
-    public int id;
+    public Object id;
     private String username;
     private String firstName;
     private String lastName;

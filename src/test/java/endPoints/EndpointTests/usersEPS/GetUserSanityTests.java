@@ -10,14 +10,12 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import Routes.users.getEP.getUsers;
+
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.responseSpecification;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-import  io.restassured.assertion.*;
-public class getUserTest {
+public class GetUserSanityTests {
     Faker faker = new Faker();
     private RequestSpecification getUserSpec;
     private ResponseSpecification getUserResSpec;
@@ -67,7 +65,6 @@ public class getUserTest {
                 .then().statusCode(200)
                 .and().log().all();
     }
-
     @Test
     public void myTest() {
         given()
@@ -75,7 +72,6 @@ public class getUserTest {
                 .when().get("https://petstore.swagger.io/v2/user/igal123")
                 .then().log().all();
     }
-
     @Test
     public void getSpecificUser() {
         createUser();
@@ -85,6 +81,6 @@ public class getUserTest {
                 .when().get("/{user}") // Use the path parameter from the base path
                 .then().spec(getUserResSpec);// Use the path parameter from the base path;
     }
-
-
 }
+
+
